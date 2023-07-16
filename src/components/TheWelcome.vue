@@ -21,6 +21,7 @@ const props = defineProps(['submitData'])
 .general {
   margin-top: 0;
   padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
+  border-left: 1px solid #ddd;
 }
 .details {
   flex: 1;

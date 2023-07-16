@@ -62,8 +62,10 @@ function onSubmit() {
       <div class="input-file">
         <label for="file-input">
           <div class="file-input-special">Загрузите Вашу фотографию</div>
-          <div class="input-file-btn">Выбрать</div>
-          <div class="input-file-text"> {{ imageData ?  imageFileName : "Файл не выбран" }}</div>
+          <div class="input-file-btn-and-text">
+            <div class="input-file-btn">Выбрать</div>
+            <div class="input-file-text"> {{ imageData ?  imageFileName : "Файл не выбран" }}</div>
+          </div>
         </label>
         <input ref="imageInput" class="input-file" id="file-input" required type="file" name="photo" multiple accept="image/*,image/jpeg" @input="onSelectImage">
       </div>
@@ -145,20 +147,21 @@ button {
   width: 100%;
 }
 .input-file {
-	position: relative;
-	display: inline-block;
+}
+.nput-file-btn-and-text {
+  display: inline;
 }
 .input-file-text {
 	padding: 0 10px;
 	line-height: 40px;
 	text-align: left;
 	height: 40px;
-	display: block;
-	float: right;
+	display: inline-block;
 	box-sizing: border-box;
 	width: 200px;
 	border-radius: 0px 6px 6px 0px;
 	border: 1px solid #ddd;
+  vertical-align: top;
 }
 .input-file-btn {
   position: relative;
