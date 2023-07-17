@@ -7,21 +7,24 @@ const props = defineProps(['submitData'])
 
 <template>
   <div class="general">
-    <DocumentationIcon class="documentation-image"/>
+    <div class="documentation-image">
+      <DocumentationIcon />
+    </div>
     <div class="details">
       <h3>Подробности</h3>
       <div>С вами в каюте едет {{ props.submitData?.petsCount }} питомца, {{ props.submitData?.peopleCount }} человек и Вы.</div>
     </div>
   </div>
   <div class="general">
-  <SupportIcon class="documentation-image"/>
+    <div class="documentation-image">
+      <SupportIcon/>
+    </div>
   </div>
 </template>
 <style scoped>
 .general {
   margin-top: 0;
   padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
-  border-left: 1px solid #ddd;
 }
 .details {
   flex: 1;

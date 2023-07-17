@@ -32,9 +32,8 @@ function onSubmit(value) {
 
 <template>
   <header :class="{'with-cat': pet === 'cat' , 'with-dog': pet === 'dog' }">
-    <img alt="Профиль" class="logo" :src="imageUrl" width="125" height="125" />
-
     <div class="wrapper">
+      <img alt="Профиль" class="logo" :src="imageUrl" width="125" height="125" />
       <InformationalComponent msg="You did it!" @image-selected="onImageSelected" @pet-selected="onPetSelected" @submit="onSubmit"/>
 
       <nav>
