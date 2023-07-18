@@ -1,5 +1,5 @@
 <script setup>
-import {ref} from 'vue';
+import {ref, computed} from 'vue';
 const emit = defineEmits(['imageSelected', 'petSelected', 'submit'])
 
 const pet = ref()
@@ -47,18 +47,13 @@ function onInputPeopleNumber(event) {
 }
 
 function onSubmit() {
-  emit('submit', {pet: pet.value, petsCount: petsCount.value, peopleCount: peopleCount.value})
+  emit('submit', {pet: pet.value, petsCount: parseInt(petsCount.value), peopleCount: parseInt(peopleCount.value)})
 }
-  
 </script>
 
 <template>
   <div class="personal-information">
     <form class="informations" @submit.prevent="onSubmit" :class="{'text-color-cat': pet === 'cat' , 'text-color-dog': pet === 'dog' }">
-      <!--div>
-        <label for="file-input">Загрузите Вашу фотографию</label>
-        <input ref="imageInput" class="input-file" id="file-input" required type="file" name="photo" multiple accept="image/*,image/jpeg" @input="onSelectImage">
-      </div-->
       <div class="input-file">
         <label for="file-input">
           <div class="file-input-special">Загрузите Вашу фотографию</div>

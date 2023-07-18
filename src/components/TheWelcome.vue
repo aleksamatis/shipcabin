@@ -12,7 +12,9 @@ const props = defineProps(['submitData'])
     </div>
     <div class="details">
       <h3>Подробности</h3>
-      <div>С вами в каюте едет {{ props.submitData?.petsCount }} питомца, {{ props.submitData?.peopleCount }} человек и Вы.</div>
+      <div class="details-str">
+      <div>С вами в каюте едет <div class="details-special">{{ props.submitData?.petsCount }}</div> питомца, <div class="details-special">{{ props.submitData?.peopleCount }}</div> человек и Вы.</div>
+      </div>
     </div>
   </div>
   <div class="general">
@@ -30,6 +32,26 @@ const props = defineProps(['submitData'])
   flex: 1;
   margin-left: 1rem;
 }
+
+.details-special {
+  width: 45px;
+  height: 45px;
+  background: #419152;
+  border-radius: 4px;
+  border: 1px solid #59be6e;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 20px;
+  padding-top: 3px;
+  color: #fff;
+}
+
+/* .details-str {
+  display: inline;
+  vertical-align: middle;
+  line-height: 100px;
+} */
 .documentation-image {
   display: flex;
   place-items: center;
